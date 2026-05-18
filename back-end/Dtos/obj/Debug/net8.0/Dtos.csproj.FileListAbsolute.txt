@@ -1,0 +1,12 @@
+I:\Q-Agent\back-end\Dtos\bin\Debug\net8.0\Dtos.deps.json
+I:\Q-Agent\back-end\Dtos\bin\Debug\net8.0\Dtos.dll
+I:\Q-Agent\back-end\Dtos\bin\Debug\net8.0\Dtos.pdb
+I:\Q-Agent\back-end\Dtos\obj\Debug\net8.0\Dtos.GeneratedMSBuildEditorConfig.editorconfig
+I:\Q-Agent\back-end\Dtos\obj\Debug\net8.0\Dtos.AssemblyInfoInputs.cache
+I:\Q-Agent\back-end\Dtos\obj\Debug\net8.0\Dtos.AssemblyInfo.cs
+I:\Q-Agent\back-end\Dtos\obj\Debug\net8.0\Dtos.csproj.CoreCompileInputs.cache
+I:\Q-Agent\back-end\Dtos\obj\Debug\net8.0\Dtos.sourcelink.json
+I:\Q-Agent\back-end\Dtos\obj\Debug\net8.0\Dtos.dll
+I:\Q-Agent\back-end\Dtos\obj\Debug\net8.0\refint\Dtos.dll
+I:\Q-Agent\back-end\Dtos\obj\Debug\net8.0\Dtos.pdb
+I:\Q-Agent\back-end\Dtos\obj\Debug\net8.0\ref\Dtos.dll

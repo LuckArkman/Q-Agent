@@ -69,9 +69,47 @@
           "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
+            "AspNetCore.HealthChecks.MongoDb": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "AspNetCore.HealthChecks.NpgSql": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.27, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Http.Polly": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -131,6 +169,9 @@
             "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
+              "I:\\Q-Agent\\back-end\\Database\\Database.csproj": {
+                "projectPath": "I:\\Q-Agent\\back-end\\Database\\Database.csproj"
+              },
               "I:\\Q-Agent\\back-end\\Dtos\\Dtos.csproj": {
                 "projectPath": "I:\\Q-Agent\\back-end\\Dtos\\Dtos.csproj"
               },
@@ -168,6 +209,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -228,6 +272,20 @@
         "net8.0": {
           "framework": "net8.0",
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.24.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -446,6 +504,36 @@
         "net8.0": {
           "framework": "net8.0",
           "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            },
+            "Polly.Extensions.Http": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

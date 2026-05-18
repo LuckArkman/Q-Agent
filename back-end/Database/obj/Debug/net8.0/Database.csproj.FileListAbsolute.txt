@@ -1,0 +1,16 @@
+I:\Q-Agent\back-end\Database\bin\Debug\net8.0\Database.deps.json
+I:\Q-Agent\back-end\Database\bin\Debug\net8.0\Database.dll
+I:\Q-Agent\back-end\Database\bin\Debug\net8.0\Database.pdb
+I:\Q-Agent\back-end\Database\bin\Debug\net8.0\Dtos.dll
+I:\Q-Agent\back-end\Database\bin\Debug\net8.0\Dtos.pdb
+I:\Q-Agent\back-end\Database\obj\Debug\net8.0\Database.csproj.AssemblyReference.cache
+I:\Q-Agent\back-end\Database\obj\Debug\net8.0\Database.GeneratedMSBuildEditorConfig.editorconfig
+I:\Q-Agent\back-end\Database\obj\Debug\net8.0\Database.AssemblyInfoInputs.cache
+I:\Q-Agent\back-end\Database\obj\Debug\net8.0\Database.AssemblyInfo.cs
+I:\Q-Agent\back-end\Database\obj\Debug\net8.0\Database.csproj.CoreCompileInputs.cache
+I:\Q-Agent\back-end\Database\obj\Debug\net8.0\Database.sourcelink.json
+I:\Q-Agent\back-end\Database\obj\Debug\net8.0\Database.csproj.Up2Date
+I:\Q-Agent\back-end\Database\obj\Debug\net8.0\Database.dll
+I:\Q-Agent\back-end\Database\obj\Debug\net8.0\refint\Database.dll
+I:\Q-Agent\back-end\Database\obj\Debug\net8.0\Database.pdb
+I:\Q-Agent\back-end\Database\obj\Debug\net8.0\ref\Database.dll

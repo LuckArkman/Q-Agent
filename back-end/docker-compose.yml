@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: qa-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: qa_agent_db
+      POSTGRES_USER: postgres_prod
+      POSTGRES_PASSWORD: secure_prod_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres_prod -d qa_agent_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - qagent-network
+
+  mongodb:
+    image: mongo:7.0
+    container_name: qa-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - qagent-network
+
+  chromadb:
+    image: chromadb/chroma:0.4.24
+    container_name: qa-chromadb
+    ports:
+      - "8000:8000"
+    volumes:
+      - chromadb_data:/chroma/chroma
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/api/v1/heartbeat || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - qagent-network
+
+  qagent-api:
+    image: qagent-api:latest
+    build:
+      context: .
+      dockerfile: Api/Dockerfile
+    container_name: qagent-api
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Host=qa-postgres;Database=qa_agent_db;Username=postgres_prod;Password=secure_prod_password
+      - MongoDB__ConnectionString=mongodb://qa-mongodb:27017
+      - MongoDB__DatabaseName=qa_agent_mongo_prod
+      - ChromaDB__BaseUrl=http://qa-chromadb:8000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      chromadb:
+        condition: service_healthy
+    networks:
+      - qagent-network
+
+volumes:
+  postgres_data:
+    driver: local
+  mongodb_data:
+    driver: local
+  chromadb_data:
+    driver: local
+
+networks:
+  qagent-network:
+    driver: bridge
