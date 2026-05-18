@@ -7,23 +7,24 @@ WORKDIR /app
 # Instalar dependências adicionais do Alpine caso necessário
 RUN apk add --no-cache icu-libs
 
-# Copiar arquivos de projeto de todas as camadas para otimizar cache de camadas Docker (restore)
-COPY QA-Application.sln ./
+# Copiar arquivos de projeto das camadas necessárias para otimizar cache de camadas Docker (restore)
 COPY Api/Api.csproj ./Api/
 COPY Controllers/Controllers.csproj ./Controllers/
 COPY Database/Database.csproj ./Database/
 COPY Dtos/Dtos.csproj ./Dtos/
 COPY Repositorys/Repositorys.csproj ./Repositorys/
 COPY Services/Services.csproj ./Services/
-COPY SearchService/SearchService.csproj ./SearchService/
-COPY WorkerService/WorkerService.csproj ./WorkerService/
-COPY Tests/Tests.csproj ./Tests/
 
-# Executar restore de pacotes NuGet de forma consolidada
-RUN dotnet restore QA-Application.sln
+# Executar restore focado no projeto da API Web
+RUN dotnet restore Api/Api.csproj
 
-# Copiar todo o código-fonte restante
-COPY . ./
+# Copiar o código-fonte restante apenas dos projetos necessários
+COPY Api/ ./Api/
+COPY Controllers/ ./Controllers/
+COPY Database/ ./Database/
+COPY Dtos/ ./Dtos/
+COPY Repositorys/ ./Repositorys/
+COPY Services/ ./Services/
 
 # Compilar e publicar a API Web no diretório de saída
 WORKDIR /app/Api
